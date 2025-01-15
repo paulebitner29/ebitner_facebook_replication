@@ -1,0 +1,37 @@
+name: facebook_replication
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+ 
+environment:
+  sdk: '>=3.2.6 <4.0.0'
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+ 
+flutter:
+  assets:
+    - assets/icons/
+    - assets/images/
+    - assets/images/boracay.jpg
+    - assets/images/paulebitner.jpg
+    - assets/images/jessica.jpg
+    - assets/images/jessicapost.png
+    - assets/images/Machael.jpg
+    - assets/images/pepitopost.jpg
+    - assets/images/defaultprofilepic.jpg
+  fonts:
+    - family: Klavika
+      fonts:
+        - asset: assets/fonts/KlavikaBoldBold.otf  
+    - family: Frutiger
+      fonts:
+        - asset: assets/fonts/FrutigerLTStd-Roman.otf
+  uses-material-design: true 
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_screenutil: ^5.9.3
+  
+ 
