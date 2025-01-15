@@ -10,8 +10,20 @@ class ShareButton extends StatefulWidget {
 }
 
 class _ShareButtonState extends State<ShareButton> {
+  int _shareCount = 0; // Counter for the number of shares
+
   void _sharePost() {
-    print("Shared"); // Print "Shared" to the console
+    setState(() {
+      _shareCount++; // Increment the share count
+    });
+
+    // Show a notification (SnackBar) that the post has been shared
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: const Text('Post shared successfully!'),
+        duration: const Duration(seconds: 2),
+      ),
+    );
   }
 
   @override
@@ -23,9 +35,9 @@ class _ShareButtonState extends State<ShareButton> {
         color: FB_DARK_PRIMARY,
       ),
       label: Text(
-        'Share',
+        'Share ($_shareCount)', // Display the share count
         style: TextStyle(
-          fontSize: ScreenUtil().setSp(12),
+          fontSize: ScreenUtil().setSp(15),
           color: FB_DARK_PRIMARY,
         ),
       ),
