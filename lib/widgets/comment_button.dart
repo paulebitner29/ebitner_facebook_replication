@@ -1,8 +1,5 @@
-import 'package:flutter/material.dart';
-// ignore: unused_import
 import 'package:facebook_replication/constants.dart';
-
-// Define the FB_DARK_PRIMARY color
+import 'package:flutter/material.dart';
 
 class CommentButton extends StatefulWidget {
   const CommentButton({Key? key}) : super(key: key);
@@ -12,7 +9,8 @@ class CommentButton extends StatefulWidget {
 }
 
 class _CommentButtonState extends State<CommentButton> {
-  final List<String> _comments = []; // List to store comments
+  final List<Map<String, String>> _comments =
+      []; // List to store comments with username and text
 
   void _showCommentSection() {
     showModalBottomSheet(
@@ -42,13 +40,15 @@ class _CommentButtonState extends State<CommentButton> {
                     : ListView.builder(
                         itemCount: _comments.length,
                         itemBuilder: (context, index) {
+                          final comment = _comments[index];
                           return ListTile(
                             leading: const CircleAvatar(
-                              backgroundImage:
-                                  AssetImage('assets/images/paulebitner.jpg'),
+                              backgroundImage: AssetImage(
+                                  'assets/images/paulebitner.jpg'), // Replace with your image path
                               radius: 16,
                             ),
-                            title: Text(_comments[index]),
+                            title: Text(comment['username'] ?? 'Anonymous'),
+                            subtitle: Text(comment['text'] ?? ''),
                           );
                         },
                       ),
@@ -77,7 +77,11 @@ class _CommentButtonState extends State<CommentButton> {
                       final comment = commentController.text.trim();
                       if (comment.isNotEmpty) {
                         setState(() {
-                          _comments.add(comment); // Add comment to the list
+                          _comments.add({
+                            'username':
+                                'Paul Ebitner', // Static username for now
+                            'text': comment,
+                          }); // Add comment to the list
                         });
                       }
                       Navigator.pop(context); // Close the modal
@@ -97,14 +101,14 @@ class _CommentButtonState extends State<CommentButton> {
   Widget build(BuildContext context) {
     return TextButton.icon(
       onPressed: _showCommentSection, // Open comment section
-      icon: Icon(
+      icon: const Icon(
         Icons.comment_outlined,
-        color: FB_DARK_PRIMARY, // Apply FB_DARK_PRIMARY color to the icon
+        color: FB_DARK_PRIMARY, // Replace with your desired color
       ),
       label: Text(
         'Comments (${_comments.length})',
-        style: TextStyle(
-            color: FB_DARK_PRIMARY), // Apply FB_DARK_PRIMARY color to the text
+        style: const TextStyle(
+            color: FB_DARK_PRIMARY), // Replace with your desired color
       ),
     );
   }
