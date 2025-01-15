@@ -28,19 +28,28 @@ class _ShareButtonState extends State<ShareButton> {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton.icon(
-      onPressed: _sharePost, // Call _sharePost when clicked
-      icon: Icon(
-        Icons.share_outlined, // Icon for the share button
-        color: FB_DARK_PRIMARY,
-      ),
-      label: Text(
-        'Share ($_shareCount)', // Display the share count
-        style: TextStyle(
-          fontSize: ScreenUtil().setSp(15),
-          color: FB_DARK_PRIMARY,
+    return Row(
+      mainAxisSize: MainAxisSize.min, // Prevents unnecessary expansion
+      children: [
+        Flexible(
+          child: TextButton.icon(
+            onPressed: _sharePost, // Call _sharePost when clicked
+            icon: Icon(
+              Icons.share_outlined, // Icon for the share button
+              color: FB_DARK_PRIMARY,
+            ),
+            label: Text(
+              'Share ($_shareCount)', // Display the share count
+              style: TextStyle(
+                fontSize: ScreenUtil().setSp(12),
+                color: FB_DARK_PRIMARY,
+                overflow: TextOverflow.ellipsis, // Prevent text overflow
+              ),
+              maxLines: 1, // Limit text to one line
+            ),
+          ),
         ),
-      ),
+      ],
     );
   }
 }
