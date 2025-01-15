@@ -35,6 +35,9 @@ class _HomeScreen extends State<HomeScreen> {
           : const Color.fromARGB(255, 0, 0, 0),
           fontFamily: 'Klavika',
         ),
+        actions: [
+          TextButton(onPressed: () => print('LOGOUT'), child: Text('LOGOUT')),
+        ],
       ),
       body: PageView(
           controller: _pageController,
