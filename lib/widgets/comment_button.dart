@@ -105,10 +105,25 @@ class _CommentButtonState extends State<CommentButton> {
         Icons.comment_outlined,
         color: FB_DARK_PRIMARY, // Replace with your desired color
       ),
-      label: Text(
-        'Comments (${_comments.length})',
-        style: const TextStyle(
-            color: FB_DARK_PRIMARY), // Replace with your desired color
+      label: RichText(
+        text: TextSpan(
+          children: [
+            TextSpan(
+              text: 'Comments ', // The "Comments" text
+              style: const TextStyle(
+                fontSize: 14, // Regular font size for the "Comments" text
+                color: FB_DARK_PRIMARY,
+              ),
+            ),
+            TextSpan(
+              text: '(${_comments.length})', // The number of comments
+              style: const TextStyle(
+                fontSize: 10, // Smaller font size for the count
+                color: FB_DARK_PRIMARY,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
