@@ -5,10 +5,12 @@ version: 0.1.0
  
 environment:
   sdk: '>=3.2.6 <4.0.0'
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
+  
  
 flutter:
   assets:
@@ -21,6 +23,7 @@ flutter:
     - assets/images/Machael.jpg
     - assets/images/pepitopost.jpg
     - assets/images/defaultprofilepic.jpg
+    - assets/images/polbookicon.png
   fonts:
     - family: Klavika
       fonts:
@@ -30,8 +33,12 @@ flutter:
         - asset: assets/fonts/FrutigerLTStd-Roman.otf
   uses-material-design: true 
 dependencies:
+  cached_network_image: ^3.4.1
+  carousel_slider: ^5.0.0
   flutter:
     sdk: flutter
   flutter_screenutil: ^5.9.3
+  shared_preferences: ^2.5.1
+  
   
  
