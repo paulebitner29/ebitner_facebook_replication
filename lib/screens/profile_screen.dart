@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:facebook_replication/constants.dart';
 import 'package:facebook_replication/widgets/custom_button.dart';
 import 'package:facebook_replication/widgets/customfont.dart';
@@ -8,7 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({super.key});
+  final String username;
+  const ProfileScreen({super.key, required this.username});
 
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
@@ -16,7 +18,17 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
+  void initState() {
+    super.initState();
+
+    // Debug: Print received username
+    print('ProfileScreen Username: ${widget.username}');
+  }
+
+  @override
   Widget build(BuildContext context) {
+    const String profilePicture =
+        'https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500';
     return DefaultTabController(
       length: 3,
       child: Container(
@@ -32,29 +44,36 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     height: 200,
                     decoration: BoxDecoration(
                       color: Colors.grey[300],
-                      image: const DecorationImage(
-                        image: NetworkImage(
-                            'https://static.wixstatic.com/media/3f001b_3a703d5921b34d81abed6005d7e198c1~mv2.jpg'),
+                      image: DecorationImage(
+                        image: CachedNetworkImageProvider(
+                            'https://media.istockphoto.com/id/610041376/photo/beautiful-sunrise-over-the-sea.jpg?s=612x612&w=0&k=20&c=R3Tcc6HKc1ixPrBc7qXvXFCicm8jLMMlT99MfmchLNA='),
                         fit: BoxFit.cover,
                       ),
                     ),
-                  ),
+                  ), 
                   Positioned(
                     bottom: -50,
                     left: ScreenUtil().setWidth(20),
                     child: Stack(
                       alignment: Alignment.center,
                       children: [
-                        const CircleAvatar(
-                          radius: 50,
-                          backgroundImage:
-                              AssetImage('assets/images/paulebitner.jpg'),
+                        CachedNetworkImage(
+                          imageUrl: profilePicture,
+                          imageBuilder: (context, imageProvider) =>
+                              CircleAvatar(
+                            radius: 50,
+                            backgroundImage: imageProvider,
+                          ),
+                          placeholder: (context, url) =>
+                              const CircularProgressIndicator(),
+                          errorWidget: (context, url, error) =>
+                              const Icon(Icons.error),
                         ),
                         Positioned(
                           bottom: 0,
                           right: 0,
                           child: CircleAvatar(
-                            radius: 16,
+                            radius: 15,
                             backgroundColor: Colors.grey[300],
                             child: const Icon(
                               Icons.camera_alt,
@@ -77,7 +96,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CustomFont(
-                      text: 'Paul Ebitner',
+                      text: widget.username,
                       fontWeight: FontWeight.bold,
                       fontSize: ScreenUtil().setSp(20),
                       color: Colors.black,
@@ -166,7 +185,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   children: [
                     Container(
                       color: Colors.white,
-                      child: const SingleChildScrollView(
+                      child: SingleChildScrollView(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
