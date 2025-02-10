@@ -1,5 +1,7 @@
-import 'package:facebook_replication/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:facebook_replication/constants.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class CommentButton extends StatefulWidget {
   const CommentButton({Key? key}) : super(key: key);
@@ -9,8 +11,25 @@ class CommentButton extends StatefulWidget {
 }
 
 class _CommentButtonState extends State<CommentButton> {
-  final List<Map<String, String>> _comments =
-      []; // List to store comments with username and text
+  final List<Map<String, String>> _comments = [];
+  String _username = "Anonymous"; // Default username
+  String _profileImageUrl =
+      "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"; // Default profile image URL
+
+  @override
+  void initState() {
+    super.initState();
+    _loadUserData();
+  }
+
+  Future<void> _loadUserData() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _username = prefs.getString('username') ?? "Anonymous";
+      _profileImageUrl = prefs.getString('profileImageUrl') ??
+          "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500";
+    });
+  }
 
   void _showCommentSection() {
     showModalBottomSheet(
@@ -42,12 +61,17 @@ class _CommentButtonState extends State<CommentButton> {
                         itemBuilder: (context, index) {
                           final comment = _comments[index];
                           return ListTile(
-                            leading: const CircleAvatar(
-                              backgroundImage: AssetImage(
-                                  'assets/images/paulebitner.jpg'), // Replace with your image path
+                            leading: CircleAvatar(
+                              backgroundImage: CachedNetworkImageProvider(
+                                  comment['profileImageUrl'] ??
+                                      _profileImageUrl),
                               radius: 16,
                             ),
-                            title: Text(comment['username'] ?? 'Anonymous'),
+                            title: Text(
+                              comment['username'] ?? 'Anonymous',
+                              style:
+                                  const TextStyle(fontWeight: FontWeight.bold),
+                            ),
                             subtitle: Text(comment['text'] ?? ''),
                           );
                         },
@@ -68,7 +92,7 @@ class _CommentButtonState extends State<CommentButton> {
                 children: [
                   TextButton(
                     onPressed: () {
-                      Navigator.pop(context); // Close the modal
+                      Navigator.pop(context);
                     },
                     child: const Text('Cancel'),
                   ),
@@ -78,13 +102,13 @@ class _CommentButtonState extends State<CommentButton> {
                       if (comment.isNotEmpty) {
                         setState(() {
                           _comments.add({
-                            'username':
-                                'Paul Ebitner', // Static username for now
+                            'username': _username,
                             'text': comment,
-                          }); // Add comment to the list
+                            'profileImageUrl': _profileImageUrl,
+                          });
                         });
                       }
-                      Navigator.pop(context); // Close the modal
+                      Navigator.pop(context);
                     },
                     child: const Text('Post'),
                   ),
@@ -100,25 +124,25 @@ class _CommentButtonState extends State<CommentButton> {
   @override
   Widget build(BuildContext context) {
     return TextButton.icon(
-      onPressed: _showCommentSection, // Open comment section
+      onPressed: _showCommentSection,
       icon: const Icon(
         Icons.comment_outlined,
-        color: FB_DARK_PRIMARY, // Replace with your desired color
+        color: FB_DARK_PRIMARY,
       ),
       label: RichText(
         text: TextSpan(
           children: [
             TextSpan(
-              text: 'Comments ', // The "Comments" text
+              text: 'Comments ',
               style: const TextStyle(
-                fontSize: 14, // Regular font size for the "Comments" text
+                fontSize: 14,
                 color: FB_DARK_PRIMARY,
               ),
             ),
             TextSpan(
-              text: '(${_comments.length})', // The number of comments
+              text: '(${_comments.length})',
               style: const TextStyle(
-                fontSize: 10, // Smaller font size for the count
+                fontSize: 14,
                 color: FB_DARK_PRIMARY,
               ),
             ),
@@ -127,14 +151,4 @@ class _CommentButtonState extends State<CommentButton> {
       ),
     );
   }
-}
-
-void main() {
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: Scaffold(
-      appBar: AppBar(title: const Text('Comment Feature')),
-      body: const Center(child: CommentButton()),
-    ),
-  ));
 }
