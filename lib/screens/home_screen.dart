@@ -1,3 +1,5 @@
+import 'package:facebook_replication/screens/login_screen.dart';
+import 'package:facebook_replication/widgets/custom_dialogs.dart';
 import '/screens/notification_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -33,6 +35,14 @@ class _HomeScreenState extends State<HomeScreen> {
     _loadUsername(); // Optional: Load persisted username if needed
   }
 
+  void _logout() {
+    // Navigate to LoginScreen
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => const LoginScreen()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,6 +61,15 @@ class _HomeScreenState extends State<HomeScreen> {
               : const Color.fromARGB(255, 0, 0, 0),
           fontFamily: 'Klavika',
         ),
+        actions: [
+          IconButton(
+            onPressed: () => customOptionDialog(context,
+                onYes: () => Navigator.pushReplacementNamed(context, '/login'),
+                title: 'Logout',
+                content: 'Are you sure you want to logout?'),
+            icon: const Icon(Icons.logout, color: FB_DARK_PRIMARY),
+          ),
+        ],
       ),
       body: PageView(
         controller: _pageController,
