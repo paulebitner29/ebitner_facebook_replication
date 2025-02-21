@@ -50,7 +50,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         fit: BoxFit.cover,
                       ),
                     ),
-                  ), 
+                  ),
                   Positioned(
                     bottom: -50,
                     left: ScreenUtil().setWidth(20),
@@ -192,27 +192,29 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             SizedBox(height: 20),
                             PostCard(
                               userName: 'Michael V',
-                              postContent: 'HAHAHAKDOG!',
-                              profilePicture: 'assets/images/Machael.jpg',
-                              postImage: 'assets/images/pepitopost.jpg',
-                              postDate: '25 minutes',
-                              initialLikes: 1105,
+                              postDate: 'December 29, 2023',
+                              postContent: 'Hello, mah pren.',
+                              profilePicture:
+                                  'https://media.philstar.com/photos/2021/06/05/michael-v_2021-06-05_00-21-20.jpg',
+                              postImage:
+                                  'https://i1.sndcdn.com/artworks-000045143592-ung2uv-t500x500.jpg',
+                              initialLikes: 78,
                             ),
-                            SizedBox(height: 20),
                             PostCard(
                               userName: 'Paul Ebitner',
-                              postContent: 'SHEESH!!!',
-                              profilePicture: 'assets/images/paulebitner.jpg',
-                              postImage: 'assets/images/boracay.jpg',
-                              postDate: 'September 29, 2024',
-                              initialLikes: 154,
+                              postDate: 'December 19, 2024',
+                              postContent: 'Let’s have fun, Boracay!',
+                              profilePicture:
+                                  'https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                              postImage:
+                                  'https://media.istockphoto.com/id/610041376/photo/beautiful-sunrise-over-the-sea.jpg?s=612x612&w=0&k=20&c=R3Tcc6HKc1ixPrBc7qXvXFCicm8jLMMlT99MfmchLNA=',
+                              initialLikes: 200,
                             ),
                             SizedBox(height: 20),
                             PostCard(
                               userName: 'Sadboi',
                               postContent: 'Maybe I wasnt enough',
-                              profilePicture:
-                                  'assets/images/defaultprofilepic.jpg',
+                              profilePicture: '',
                               postImage: '',
                               postDate: 'December 14, 2023',
                               initialLikes: 899,
@@ -221,8 +223,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             PostCard(
                               userName: 'Jessica Soho',
                               postContent: 'Kabog ang aming team.',
-                              profilePicture: 'assets/images/jessica.jpg',
-                              postImage: 'assets/images/jessicapost.png',
+                              profilePicture: '',
+                              postImage: '',
                               postDate: 'December 14 at 6:05 PM',
                               initialLikes: 25,
                             ),
@@ -230,8 +232,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             PostCard(
                               userName: 'Jyrex',
                               postContent: 'haysssst',
-                              profilePicture:
-                                  'assets/images/defaultprofilepic.jpg',
+                              profilePicture: '',
                               postImage: '',
                               postDate: 'December 13, 2024',
                               initialLikes: 55,
