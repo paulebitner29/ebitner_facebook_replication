@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:facebook_replication/constants.dart';
 import 'package:facebook_replication/screens/detail_screen.dart';
 import 'package:facebook_replication/widgets/customfont.dart';
 import 'package:flutter/material.dart';
@@ -53,17 +55,26 @@ class Notification extends StatelessWidget {
         child: Row(
           children: [
             (profilePicture == '')
-                ? Icon(
-                    Icons.person,
-                    size: ScreenUtil().setSp(40),
-                  )
-                : CircleAvatar(
-                    radius: ScreenUtil().setSp(25),
-                    backgroundImage: AssetImage(profilePicture),
+                ? const Icon(Icons.person) // Default icon if no profile image
+                : ClipOval(
+                    child: CachedNetworkImage(
+                      fit: BoxFit.cover,
+                      width: 30,
+                      height: 30,
+                      imageUrl: profilePicture,
+                      progressIndicatorBuilder:
+                          (context, url, downloadProgress) =>
+                              CircularProgressIndicator(
+                        color: FB_DARK_PRIMARY,
+                        value: downloadProgress.progress,
+                      ),
+                      errorWidget: (context, url, error) => Icon(
+                        Icons.error,
+                        size: 100.sp,
+                      ),
+                    ),
                   ),
-            SizedBox(
-              width: ScreenUtil().setWidth(10),
-            ),
+            SizedBox(width: ScreenUtil().setSp(10)),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
