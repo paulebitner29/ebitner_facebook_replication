@@ -60,8 +60,10 @@ class NewsfeedScreen extends StatelessWidget {
           userName: 'Michael V',
           postDate: 'December 29, 2023',
           postContent: 'Hello, mah pren.',
-          profilePicture: 'assets/images/Machael.jpg',
-          postImage: 'assets/images/pepitopost.jpg',
+          profilePicture:
+              'https://media.philstar.com/photos/2021/06/05/michael-v_2021-06-05_00-21-20.jpg',
+          postImage:
+              'https://i1.sndcdn.com/artworks-000045143592-ung2uv-t500x500.jpg',
           initialLikes: 78,
         ),
       ],
