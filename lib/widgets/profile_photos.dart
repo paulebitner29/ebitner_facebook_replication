@@ -51,7 +51,7 @@ class profile_photos extends StatelessWidget {
             child: InkWell(
               onTap: () => customShowImageDialog(context,
                   imageUrl: 'assets/images/paulebitner.jpg'),
-              child: Image.network('assets/images/paulebitner.jpg',
+              child: Image.asset('assets/images/paulebitner.jpg',
                   fit: BoxFit.cover),
             )),
         Container(
@@ -59,7 +59,7 @@ class profile_photos extends StatelessWidget {
             child: InkWell(
               onTap: () => customShowImageDialog(context,
                   imageUrl: 'assets/images/paulebitner.jpg'),
-              child: Image.network('assets/images/paulebitner.jpg',
+              child: Image.asset('assets/images/paulebitner.jpg',
                   fit: BoxFit.cover),
             )),
         Container(
@@ -67,7 +67,7 @@ class profile_photos extends StatelessWidget {
             child: InkWell(
               onTap: () => customShowImageDialog(context,
                   imageUrl: 'assets/images/paulebitner.jpg'),
-              child: Image.network('assets/images/paulebitner.jpg',
+              child: Image.asset('assets/images/paulebitner.jpg',
                   fit: BoxFit.cover),
             )),
         Container(
@@ -75,7 +75,7 @@ class profile_photos extends StatelessWidget {
             child: InkWell(
               onTap: () => customShowImageDialog(context,
                   imageUrl: 'assets/images/pepitopost.jpg'),
-              child: Image.network('assets/images/pepitopost.jpg',
+              child: Image.asset('assets/images/pepitopost.jpg',
                   fit: BoxFit.cover),
             )),
         Container(
@@ -83,7 +83,7 @@ class profile_photos extends StatelessWidget {
             child: InkWell(
               onTap: () => customShowImageDialog(context,
                   imageUrl: 'assets/images/pepitopost.jpg'),
-              child: Image.network('assets/images/pepitopost.jpg',
+              child: Image.asset('assets/images/pepitopost.jpg',
                   fit: BoxFit.cover),
             )),
         Container(
@@ -91,7 +91,7 @@ class profile_photos extends StatelessWidget {
             child: InkWell(
               onTap: () => customShowImageDialog(context,
                   imageUrl: 'assets/images/pepitopost.jpg'),
-              child: Image.network('assets/images/pepitopost.jpg',
+              child: Image.asset('assets/images/pepitopost.jpg',
                   fit: BoxFit.cover),
             )),
         Container(
@@ -99,7 +99,7 @@ class profile_photos extends StatelessWidget {
             child: InkWell(
               onTap: () => customShowImageDialog(context,
                   imageUrl: 'assets/images/pepitopost.jpg'),
-              child: Image.network('assets/images/pepitopost.jpg',
+              child: Image.asset('assets/images/pepitopost.jpg',
                   fit: BoxFit.cover),
             )),
         Container(
@@ -108,7 +108,7 @@ class profile_photos extends StatelessWidget {
               onTap: () => customShowImageDialog(context,
                   imageUrl: 'assets/images/boracay.jpg'),
               child:
-                  Image.network('assets/images/boracay.jpg', fit: BoxFit.cover),
+                  Image.asset('assets/images/boracay.jpg', fit: BoxFit.cover),
             )),
         Container(
             padding: const EdgeInsets.all(0),
@@ -116,7 +116,7 @@ class profile_photos extends StatelessWidget {
               onTap: () => customShowImageDialog(context,
                   imageUrl: 'assets/images/boracay.jpg'),
               child:
-                  Image.network('assets/images/boracay.jpg', fit: BoxFit.cover),
+                  Image.asset('assets/images/boracay.jpg', fit: BoxFit.cover),
             )),
         Container(
             padding: const EdgeInsets.all(0),
@@ -124,7 +124,7 @@ class profile_photos extends StatelessWidget {
               onTap: () => customShowImageDialog(context,
                   imageUrl: 'assets/images/boracay.jpg'),
               child:
-                  Image.network('assets/images/boracay.jpg', fit: BoxFit.cover),
+                  Image.asset('assets/images/boracay.jpg', fit: BoxFit.cover),
             )),
         Container(
             padding: const EdgeInsets.all(0),
@@ -132,14 +132,14 @@ class profile_photos extends StatelessWidget {
               onTap: () => customShowImageDialog(context,
                   imageUrl: 'assets/images/boracay.jpg'),
               child:
-                  Image.network('assets/images/boracay.jpg', fit: BoxFit.cover),
+                  Image.asset('assets/images/boracay.jpg', fit: BoxFit.cover),
             )),
         Container(
             padding: const EdgeInsets.all(0),
             child: InkWell(
               onTap: () => customShowImageDialog(context,
                   imageUrl: 'assets/images/jessicapost.png'),
-              child: Image.network('assets/images/jessicapost.png',
+              child: Image.asset('assets/images/jessicapost.png',
                   fit: BoxFit.cover),
             )),
         Container(
@@ -147,7 +147,7 @@ class profile_photos extends StatelessWidget {
             child: InkWell(
               onTap: () => customShowImageDialog(context,
                   imageUrl: 'assets/images/jessicapost.png'),
-              child: Image.network('assets/images/jessicapost.png',
+              child: Image.asset('assets/images/jessicapost.png',
                   fit: BoxFit.cover),
             )),
         Container(
@@ -155,7 +155,7 @@ class profile_photos extends StatelessWidget {
             child: InkWell(
               onTap: () => customShowImageDialog(context,
                   imageUrl: 'assets/images/jessicapost.png'),
-              child: Image.network('assets/images/jessicapost.png',
+              child: Image.asset('assets/images/jessicapost.png',
                   fit: BoxFit.cover),
             )),
         Container(
@@ -163,7 +163,7 @@ class profile_photos extends StatelessWidget {
             child: InkWell(
               onTap: () => customShowImageDialog(context,
                   imageUrl: 'assets/images/jessicapost.png'),
-              child: Image.network('assets/images/jessicapost.png',
+              child: Image.asset('assets/images/jessicapost.png',
                   fit: BoxFit.cover),
             )),
         Container(
@@ -171,7 +171,7 @@ class profile_photos extends StatelessWidget {
             child: InkWell(
               onTap: () => customShowImageDialog(context,
                   imageUrl: 'assets/images/jessicapost.png'),
-              child: Image.network('assets/images/jessicapost.png',
+              child: Image.asset('assets/images/jessicapost.png',
                   fit: BoxFit.cover),
             )),
         Container(
@@ -179,7 +179,7 @@ class profile_photos extends StatelessWidget {
             child: InkWell(
               onTap: () => customShowImageDialog(context,
                   imageUrl: 'assets/images/jessicapost.png'),
-              child: Image.network('assets/images/jessicapost.png',
+              child: Image.asset('assets/images/jessicapost.png',
                   fit: BoxFit.cover),
             )),
       ],
