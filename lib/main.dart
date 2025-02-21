@@ -1,3 +1,5 @@
+import 'package:facebook_replication/screens/splash_screen.dart';
+
 import '/screens/login_screen.dart';
 import '/screens/notification_screen.dart';
 import '/screens/register_screen.dart';
@@ -6,7 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../screens/home_screen.dart';
 import '../screens/newsfeed_screen.dart';
 
-void main()  {
+void main() {
   runApp(const FacebookReplication());
 }
 
@@ -23,14 +25,16 @@ class FacebookReplication extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Facebook Replication',
-          initialRoute: '/login',
+          initialRoute: '/splash',
           routes: {
             '/login': (context) => const LoginScreen(),
             '/register': (context) => const RegisterScreen(),
             '/newsfeed': (context) => const NewsfeedScreen(),
-            '/home': (context) => const HomeScreen(username: '',),
+            '/home': (context) => const HomeScreen(
+                  username: '',
+                ),
             '/notification': (context) => const NotificationScreen(),
-
+            '/splash': (context) => const SplashScreen(),
           },
         );
       },
