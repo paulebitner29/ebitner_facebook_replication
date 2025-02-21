@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void getIsLogin() {
     Timer(
-      const Duration(seconds: 4),
+      const Duration(seconds: 5),
       () => Navigator.popAndPushNamed(context, '/login'),
     );
   }
