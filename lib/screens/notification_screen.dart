@@ -23,8 +23,10 @@ class _NotificationScreenState extends State<NotificationScreen> {
                 name: 'Paul Ebitner',
                 postDate: 'December 19, 2024',
                 post: 'Let’s have fun, Boracay!',
-                profilePicture: 'assets/images/paulebitner.jpg',
-                imagePost: 'assets/images/boracay.jpg',
+                profilePicture:
+                    'https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                imagePost:
+                    'https://media.istockphoto.com/id/610041376/photo/beautiful-sunrise-over-the-sea.jpg?s=612x612&w=0&k=20&c=R3Tcc6HKc1ixPrBc7qXvXFCicm8jLMMlT99MfmchLNA=',
                 initialLikes: 200,
               ),
               Divider(),
@@ -32,8 +34,9 @@ class _NotificationScreenState extends State<NotificationScreen> {
                 name: 'Jessica Soho',
                 postDate: 'October 20, 2020',
                 post: 'Lumipad ang aming team.',
-                profilePicture: 'assets/images/jessica.jpg',
-                imagePost: 'assets/images/jessicapost.png',
+                profilePicture:
+                    'https://images.gmanews.tv/webpics/2021/04/jessica_soho_2021_04_08_18_49_05.jpg',
+                imagePost: '',
                 initialLikes: 56,
               ),
               Divider(),
@@ -41,8 +44,10 @@ class _NotificationScreenState extends State<NotificationScreen> {
                 name: 'Michael V',
                 postDate: 'December 29, 2023',
                 post: 'Hello, mah pren.',
-                profilePicture: 'assets/images/Machael.jpg',
-                imagePost: 'assets/images/pepitopost.jpg',
+                profilePicture:
+                    'https://media.philstar.com/photos/2021/06/05/michael-v_2021-06-05_00-21-20.jpg',
+                imagePost:
+                    'https://i1.sndcdn.com/artworks-000045143592-ung2uv-t500x500.jpg',
                 initialLikes: 78,
               ),
               Divider(),
@@ -50,7 +55,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                 name: 'Marlou',
                 post: 'beng geng',
                 profilePicture: '',
-                imagePost: 'assets/images/paulebitner.jpg',
+                imagePost: '',
                 postDate: 'January 22, 2021',
                 initialLikes: 786,
               ),
@@ -58,7 +63,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
               notif.Notification(
                 name: 'Unix',
                 post: 'Dinoooo!',
-                profilePicture: 'assets/images/defaultprofilepic.jpg',
+                profilePicture: '',
                 postDate: 'January 19, 2014',
                 initialLikes: 45,
               ),
@@ -66,7 +71,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
               notif.Notification(
                 name: 'Patrick',
                 post: 'dadadadada!!',
-                profilePicture: 'assets/images/defaultprofilepic.jpg',
+                profilePicture: '',
                 postDate: 'January 19, 2014',
                 initialLikes: 45,
               ),
@@ -74,7 +79,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
               notif.Notification(
                 name: 'Danilods',
                 post: 'lemecook!',
-                profilePicture: 'assets/images/defaultprofilepic.jpg',
+                profilePicture: '',
                 postDate: 'February 9, 2017',
                 initialLikes: 45,
               ),
