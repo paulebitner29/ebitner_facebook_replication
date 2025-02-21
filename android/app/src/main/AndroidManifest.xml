@@ -42,4 +42,7 @@
             <data android:mimeType="text/plain"/>
         </intent>
     </queries>
+
+    <!-- Allow to make ImageCachedNetwork work in application release-->
+    <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>
